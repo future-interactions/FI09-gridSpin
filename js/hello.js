@@ -8,17 +8,22 @@ const vH = window.innerHeight;
 renderer.setSize(vW, vH);
 document.body.appendChild(renderer.domElement);
 const geometry = new THREE.CapsuleGeometry(1, 1, 48, 48);
-const material = new THREE.MeshNormalMaterial();
+const material = new THREE.MeshPhongMaterial({
+  color: 0x0ffee2, 
+});
 const pill = new THREE.Mesh(geometry, material);
 const pill2 = new THREE.Mesh(geometry, material);
 scene.add(pill);
 scene.add(pill2);
-const gridHelper = new THREE.GridHelper(30,30, 0x555555, 0x555555);
+const gridHelper = new THREE.GridHelper(300,50, 0x555555, 0x555555);
 scene.add(gridHelper);
-pill.position.x = .2;
-pill2.position.x = -.2;
+const light = new THREE.PointLight(0xffffff, 5, 100);
+light.position.set(50, 50, 50);
+scene.add(light);
+pill.position.x = 1.5;
+pill2.position.x = -1.5;
 camera.position.z = 5;
-
+scene.fog = new THREE.Fog('black', 0.1, 100);
 window.addEventListener('resize', onWindowResize);
 
 function onWindowResize() {
