@@ -1,0 +1,7 @@
+{
+  "type: module",
+  "dependencies": {
+    "three": "^0.142.0",
+    "three-orbitcontrols": "^2.110.3"
+  }
+}
