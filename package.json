@@ -1,7 +1,6 @@
 {
-  "type: module",
   "dependencies": {
     "three": "^0.142.0",
-    "three-orbitcontrols": "^2.110.3"
+    "troika-three-text": "^0.46.4"
   }
 }
